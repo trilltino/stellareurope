@@ -1,0 +1,29 @@
+name: Deploy Yew frontend
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Rust and trunk
+        run: |
+          rustup target add wasm32-unknown-unknown
+          cargo install trunk
+
+      - name: Build frontend
+        working-directory: frontend
+        run: trunk build --release --public-url /stellareurope/
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend/dist
