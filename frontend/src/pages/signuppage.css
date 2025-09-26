@@ -1,0 +1,452 @@
+/* Signup Page Styles */
+.signup-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+    color: white;
+    padding: 120px 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.signup-card {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.signup-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #00d4ff, #0099cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.signup-subtitle {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-section {
+    border-bottom: 1px solid #333;
+    padding-bottom: 25px;
+}
+
+.form-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    color: #00d4ff;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e0e0e0;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00d4ff;
+    background: rgba(0, 212, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.2);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #888;
+}
+
+.form-help {
+    display: block;
+    margin-top: 5px;
+    color: #aaa;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.role-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.role-option {
+    position: relative;
+}
+
+.role-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.role-label {
+    display: block;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.role-label:hover {
+    border-color: #555;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.role-option input[type="radio"]:checked + .role-label.ambassador-role {
+    border-color: #00d4ff;
+    background: rgba(0, 212, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+.role-option input[type="radio"]:checked + .role-label.chapter-lead-role {
+    border-color: #ff6b35;
+    background: rgba(255, 107, 53, 0.1);
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.2);
+}
+
+.role-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.role-icon {
+    font-size: 1.5rem;
+}
+
+.role-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #e0e0e0;
+}
+
+.ambassador-role .role-name {
+    color: #00d4ff;
+}
+
+.chapter-lead-role .role-name {
+    color: #ff6b35;
+}
+
+.role-description {
+    color: #ccc;
+    line-height: 1.5;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.submit-button {
+    background: linear-gradient(45deg, #00d4ff, #0099cc);
+    color: black;
+    border: none;
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background: linear-gradient(45deg, #0099cc, #00d4ff);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+/* Loading State */
+.loading-state {
+    text-align: center;
+    padding: 60px 40px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #333;
+    border-top: 4px solid #00d4ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 30px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-state h2 {
+    color: #00d4ff;
+    margin-bottom: 15px;
+}
+
+.loading-state p {
+    color: #ccc;
+}
+
+/* Success State */
+.success-state {
+    text-align: center;
+    padding: 40px;
+}
+
+.success-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.success-state h2 {
+    color: #00d4ff;
+    margin-bottom: 15px;
+}
+
+.success-message {
+    color: #ccc;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.user-info {
+    background: rgba(0, 212, 255, 0.05);
+    border: 1px solid #00d4ff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.user-info h3 {
+    color: #00d4ff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.user-info p {
+    margin-bottom: 8px;
+    color: #e0e0e0;
+}
+
+.continue-button {
+    background: linear-gradient(45deg, #00d4ff, #0099cc);
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.continue-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+}
+
+/* Error State */
+.error-state {
+    text-align: center;
+    padding: 40px;
+}
+
+.error-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.error-state h2 {
+    color: #ff4444;
+    margin-bottom: 15px;
+}
+
+.error-message {
+    color: #ccc;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    background: rgba(255, 68, 68, 0.1);
+    border: 1px solid #ff4444;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.retry-button {
+    background: transparent;
+    color: #ff4444;
+    border: 2px solid #ff4444;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+    background: #ff4444;
+    color: black;
+    transform: translateY(-2px);
+}
+
+/* Freighter Wallet Integration */
+.wallet-input-container {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.wallet-input-container input {
+    flex: 1;
+    margin: 0;
+}
+
+.freighter-button {
+    background: linear-gradient(45deg, #4c1d95, #7c3aed);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    min-width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.freighter-button:hover:not(:disabled) {
+    background: linear-gradient(45deg, #5b21b6, #8b5cf6);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+}
+
+.freighter-button:disabled {
+    background: linear-gradient(45deg, #059669, #10b981);
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+
+.freighter-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.freighter-connected {
+    border-color: #10b981 !important;
+    background: rgba(16, 185, 129, 0.05) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .signup-container {
+        padding: 100px 15px 30px;
+    }
+
+    .signup-card {
+        padding: 30px 20px;
+    }
+
+    .signup-title {
+        font-size: 2rem;
+    }
+
+    .role-label {
+        padding: 15px;
+    }
+
+    .submit-button {
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+
+    .wallet-input-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .freighter-button {
+        min-width: auto;
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-card {
+        padding: 25px 15px;
+    }
+
+    .signup-title {
+        font-size: 1.8rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 14px;
+        font-size: 0.95rem;
+    }
+
+    .role-header {
+        gap: 8px;
+    }
+
+    .role-name {
+        font-size: 1.1rem;
+    }
+
+    .role-description {
+        font-size: 0.9rem;
+    }
+}

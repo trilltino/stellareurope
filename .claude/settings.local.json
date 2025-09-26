@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/isich/xforcesolutions/**)",
+      "Read(//c/Users/isich/stellar_heads/**)",
+      "Bash(git restore:*)",
+      "Bash(cargo check:*)",
+      "Bash(docker-compose up:*)",
+      "Bash(docker:*)",
+      "Bash(cargo run:*)",
+      "Bash(cargo install:*)",
+      "Bash(sqlx migrate:*)",
+      "Bash(pkill:*)",
+      "Bash(cargo build:*)",
+      "Bash(taskkill:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
